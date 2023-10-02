@@ -24,6 +24,7 @@ public class MessageBusSubscriber : BackgroundService
 
     private void IniciaRabbitMQ()
     {
+        // docker pull mcr.microsoft.com/dotnet/sdk:6.0
         // docker run -it --rm --name rabbitmq -p 8002:5672 -p 15672:15672 rabbitmq:3.12-management
         _connection = new ConnectionFactory() { HostName = "localhost", Port = 8002 }.CreateConnection();
         _channel = _connection.CreateModel();
